@@ -10,15 +10,15 @@ extern PersonList deepCopyPersonList(PersonList);
 
 int main() {
   int n = 2;
-  PersonList ppl = createPersonList(n);
-  PersonList deepPpl = deepCopyPersonList(ppl);
+  PersonList a;
+  PersonList deepPpl = deepCopyPersonList(a);
 
   for (int i = 0; i < n; i++) {
     cout << deepPpl.people[i].name << " " << deepPpl.people[i].age << endl;
   }
 
   delete [] deepPpl.people;
-  delete [] ppl.people;
+  delete [] a.people;
 
   return 0;
 

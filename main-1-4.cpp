@@ -11,7 +11,7 @@ extern PersonList shallowCopyPersonList(PersonList);
 
 int main() {
   int n = 2;
-  PersonList ppl = createPersonList(n);
+  PersonList ppl;
   PersonList shallowPpl = shallowCopyPersonList(ppl);
 
   for (int i = 0; i < n; i++) {
