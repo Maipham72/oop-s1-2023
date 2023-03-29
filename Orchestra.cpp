@@ -22,7 +22,7 @@ int Orchestra::get_current_number_of_members() {
 
 bool Orchestra::has_instrument(std::string instrument) {
   for (int i = 0; i < count_mem; i++) {
-    if (performers[i].get_instrument() != " ") {
+    if (performers[i].get_instrument() == instrument) {
       return true;
     }
   }
