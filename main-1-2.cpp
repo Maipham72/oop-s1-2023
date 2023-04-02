@@ -57,7 +57,7 @@ int main() {
   Cage* animal_list = vets.get_cages();
 
   for (int i = 0; i < vets.get_number_of_cages(); i++) {
-    std::cout << "Animal " << i + 1 << " has name: " << animal_list[i].get_name() << " ,and ID number: " << animal_list[i].get_IDnum() << std::endl;
+    std::cout << "Animal " << i + 1 << " has name: " << animal_list[i].get_name() << ", and ID number: " << animal_list[i].get_IDnum() << std::endl;
   }
 
   return 0;
