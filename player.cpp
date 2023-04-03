@@ -12,3 +12,28 @@ void Player::attack(Player* opponent) {
 void Player::takeDamage(int damage) {
   std::cout << "The player took " << damage << " points" << ", the remain health point is: " << health - damage << std::endl;
 }
+
+std::string Player::getName() const {
+  return name;
+}
+
+void Player::setName(const std::string& name) {
+  this-> name = name;
+}
+
+int Player::getHealth() const {
+  return health;
+}
+
+void Player::setHealth(int health) {
+  this->health = health;
+}
+
+void Player::setDamage(int damage) {
+  this->damage = damage;
+}
+
+int Player::getDamage() const {
+  return damage;
+}
+

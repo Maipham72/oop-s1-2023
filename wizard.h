@@ -8,13 +8,10 @@ class Wizard: public Player {
     int mana;
 
   public:
+    Wizard(std::string, int health, int damage, int mana);
     void castSpell(Player* opponent);
-    int getHealth();
-    int setHealth();
-    std::string getName();
-    std::string setName();
-    int getDamage();
-    int setDamage();
+    int getMana() const;
+    void setMana(int mana);
 };
 
 #endif

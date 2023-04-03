@@ -8,13 +8,10 @@ class Warrior : public Player {
     std::string weapon;
   
   public:
+    Warrior (std::string name, int health, int damage, std::string mana);
     void swingWeapon(Player* opponent);
-    int getHealth();
-    int setHealth();
-    std::string getName();
-    std::string getName();
-    int getDamage();
-    int setDamage();
+    void setWeapon(const std::string& weapon);
+    std::string getWeapon() const;
 };
 
 #endif
