@@ -6,7 +6,7 @@
 class ParkingLot {
   private:
     int max_size;
-    std::vector <Vehicle*> vehicles;
+    Vehicle** vehicles;
     int counter = 0;
     int maxParkingDuration;
 
@@ -15,8 +15,8 @@ class ParkingLot {
     ParkingLot(int max_size);
     int getCount() const;
     void parkVehicle(Vehicle* vehicles);
-    void unpackVehicle(int IDinput);
-    void countOverstayingVehicles(int maxParkingDuration);
+    void unparkVehicle(int IDinput);
+    int countOverstayingVehicles(int maxParkingDuration);
 };
 
 #endif
