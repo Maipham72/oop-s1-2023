@@ -11,11 +11,12 @@ int main() {
   int ID;
   std::string type;
   
+  Vehicle* vehicle[10];
+
   for (int i = 0; i < 10; i++) {
     std::cout << "What is the type of vehicle you want to park?" << std::endl;
     std::cin >> type;
     
-    Vehicle* vehicle[10];
 
     if (type == "Car") {
       vehicle[i] = new Car(i+1);
