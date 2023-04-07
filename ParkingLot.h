@@ -7,7 +7,7 @@ class ParkingLot {
   private:
     int max_size;
     Vehicle** vehicles;
-    int counter = 0;
+    int counter;
     int maxParkingDuration;
 
   

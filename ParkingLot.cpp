@@ -3,6 +3,7 @@
 #include <iostream>
 
 ParkingLot::ParkingLot(int max_size): max_size(max_size) {
+  counter = 0;
   vehicles = new Vehicle*[max_size];
 }
 
@@ -20,20 +21,21 @@ void ParkingLot::parkVehicle(Vehicle* vehicle) {
 }
 
 void ParkingLot::unparkVehicle(int IDinput) {
-  bool has_vel = false;
   for (int i = 0; i < counter; i++) {
     if (vehicles[i]->getID() == IDinput) {
       delete vehicles[i];
-      vehicles[i] = vehicles[counter - 1];
+      vehicles[i] = nullptr;
+      for (int j = i; j < counter; j++) {
+        vehicles[j] = vehicles[j+1];
+      }
       counter--;
-      has_vel = true;
-      break;
     } 
   }
-  if (has_vel = false) {
-    std::cout << "Vehicle not in the lot" << std::endl;
-  }
+  
+  std::cout << "Vehicle not in the lot" << std::endl;
+
 }
+
 
 int ParkingLot::countOverstayingVehicles(int maxParkingDuration) {
   int vel_count_overstay = 0;
