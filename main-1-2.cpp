@@ -8,26 +8,28 @@
 
 int main() {
   ParkingLot parking(10);
-  int ID;
-  std::string type;
+  int ID = 1;
   
-  Vehicle* vehicle[10];
-
-  for (int i = 0; i < 10; i++) {
+  while (parking.getCount() < 10) {
+    std::string type;
     std::cout << "What is the type of vehicle you want to park?" << std::endl;
     std::cin >> type;
     
+    Vehicle* vehicle;
 
     if (type == "Car") {
-      vehicle[i] = new Car(i+1);
+      vehicle = new Car(ID);
+      ID++;
     } else if (type == "Bus") {
-      vehicle[i] = new Bus(i+1);
+      vehicle = new Bus(ID+1);
+      ID++;
     } else if (type == "Motorbike") {
-      vehicle[i] = new Motorbike(i+1);
+      vehicle = new Motorbike(ID+2);
+      ID++;
     } else {
       std::cout << "The type is not listed" << std::endl;
     }
-    parking.parkVehicle(*vehicle);
+    parking.parkVehicle(vehicle);
   }
 
   std::cout << "Enter the ID number of vehicle you want to remove: " << std::endl;

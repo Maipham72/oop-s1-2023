@@ -24,18 +24,14 @@ void ParkingLot::unparkVehicle(int IDinput) {
   for (int i = 0; i < counter; i++) {
     if (vehicles[i]->getID() == IDinput) {
       delete vehicles[i];
-      vehicles[i] = nullptr;
-      for (int j = i; j < counter; j++) {
-        vehicles[j] = vehicles[j+1];
-      }
+      vehicles[i] = vehicles[counter - 1];
       counter--;
-    } 
+      break;
+    } else {
+      std::cout << "Vehicle not in the lot" << std::endl;
+    }
   }
-  
-  std::cout << "Vehicle not in the lot" << std::endl;
-
 }
-
 
 int ParkingLot::countOverstayingVehicles(int maxParkingDuration) {
   int vel_count_overstay = 0;
