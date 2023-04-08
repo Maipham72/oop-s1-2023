@@ -9,7 +9,7 @@ ParkingLot::ParkingLot(int max_size): max_size(max_size) {
 
 int ParkingLot::getCount() const {
   return counter;
-}
+};
 
 void ParkingLot::parkVehicle(Vehicle* vehicle) {
   if (counter < max_size) {
@@ -18,7 +18,7 @@ void ParkingLot::parkVehicle(Vehicle* vehicle) {
   } else {
     std::cout << "The lot is full" << std::endl;
   }
-}
+};
 
 void ParkingLot::unparkVehicle(int IDinput) {
   for (int i = 0; i < counter; i++) {
@@ -26,12 +26,12 @@ void ParkingLot::unparkVehicle(int IDinput) {
       delete vehicles[i];
       vehicles[i] = vehicles[counter - 1];
       counter--;
-      break;
-    } else {
-      std::cout << "Vehicle not in the lot" << std::endl;
+      return;
     }
   }
-}
+
+  std::cout << "Vehicle not in the lot" << std::endl;
+};
 
 int ParkingLot::countOverstayingVehicles(int maxParkingDuration) {
   int vel_count_overstay = 0;
@@ -40,7 +40,7 @@ int ParkingLot::countOverstayingVehicles(int maxParkingDuration) {
       vel_count_overstay++;
     }
   return vel_count_overstay;
-}
+};
 
 
 
