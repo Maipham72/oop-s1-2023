@@ -23,3 +23,11 @@ void Appliance::set_powerRating(int powerRating) {
 int Appliance::get_powerRating() const {
   return powerRating;
 }
+
+void Appliance::set_isOn(bool isOn) {
+  this->isOn = isOn;
+}
+
+bool Appliance::get_isOn() {
+  return isOn;
+}
