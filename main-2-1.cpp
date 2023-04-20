@@ -9,7 +9,7 @@ int main() {
   fridge.turnOn();
   std::cout << "Power consumption when on: " << fridge.getPowerConsumption() << std::endl;
 
-  fridge.set_Volume(300);
+  fridge.setVolume(300);
   std::cout << "Power consumption with bigger volume: " << fridge.getPowerConsumption() << std::endl;
 
   fridge.turnOff();

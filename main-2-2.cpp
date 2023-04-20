@@ -9,7 +9,7 @@ int main() {
   tv.turnOn();
   std::cout << "Power consumption when on: " << tv.getPowerConsumption() << std::endl;
 
-  tv.set_ScreenSize(300);
+  tv.setScreenSize(300);
   std::cout << "Power consumption with bigger volume: " << tv.getPowerConsumption() << std::endl;
 
   tv.turnOff();
