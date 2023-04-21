@@ -31,3 +31,12 @@ void Appliance::set_isOn(bool isOn) {
 bool Appliance::get_isOn() {
   return isOn;
 }
+
+double Appliance::getPowerConsumption() {
+  if (isOn) {
+    return powerRating;
+  }
+  else {
+    return 0;
+  }
+}

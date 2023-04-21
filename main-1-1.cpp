@@ -2,7 +2,7 @@
 #include <iostream>
 
 int main() {
-  Appliance* appliance;  
+  Appliance* appliance = new Appliance(100);  
   std::cout << appliance->get_powerRating() << std::endl;
   appliance->turnOff();
   appliance->turnOn();
