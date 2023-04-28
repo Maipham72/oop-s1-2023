@@ -9,7 +9,7 @@ AirCraft::AirCraft() {
 AirCraft::AirCraft(int weight): weight(weight) {}
 
 void AirCraft::refuel() {
-  fuel = 100/100;
+  fuel = 100;
 }
 
 void AirCraft::set_weight(int weight) {
