@@ -18,21 +18,25 @@ std::string Helicopter::get_name() {
 }
 
 void Helicopter::fly(int headwind, int minutes) {
-  bool fly = true;
-  if (fly = true && headwind >= 40 && get_weight() > 5670) {
-    AirCraft(fuel) = get_fuel() - (0.4)*minutes - 0.01*(get_weight() - 5670)*minutes;
-  } else if (fly = true && headwind >= 40 && get_weight() < 5670) {
-    AirCraft(fuel) = get_fuel() - (0.4)*minutes;
-  } else if (fly = true && headwind < 40 && get_weight() > 5670) {
-    AirCraft(fuel) = get_fuel() - (0.2)*minutes - 0.01*(get_weight() - 5670)*minutes;
-  } else if (fly = true && headwind < 40 && get_weight() < 5670) {
-    AirCraft(fuel) = get_fuel() - (0.2)*minutes;
+  if (headwind >= 40 && get_weight() > 5670) {
+    get_fuel() - (0.4)*minutes - 0.01*(get_weight() - 5670)*minutes;
+    get_numberOfFlights() + 1;
+  } else if (headwind >= 40 && get_weight() < 5670) {
+    get_fuel() - (0.4)*minutes;
+    get_numberOfFlights() + 1;
+
+  } else if (headwind < 40 && get_weight() > 5670) {
+    get_fuel() - (0.2)*minutes - 0.01*(get_weight() - 5670)*minutes;
+    get_numberOfFlights() + 1;
+
+  } else if (headwind < 40 && get_weight() < 5670) {
+    get_fuel() - (0.2)*minutes;
+    get_numberOfFlights() + 1;
+
   }
-  AirCraft(numberofFlights) = get_numberOfFlights() + 1;
+  
 
   if (get_fuel() < 20) {
-    fly = false;
-    AirCraft(fuel) = fuel;
-    AirCraft(numberofFlights) = get_numberOfFlights();
+    get_numberOfFlights();
   }
 }
