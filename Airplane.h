@@ -11,7 +11,7 @@ class Airplane : public AirCraft {
     Airplane();
     Airplane(int weight, int passengers);
     void reducePassengers(int x);
-    int get_numPassengers();
+    int get_numPassengers() const;
     void fly(int headwind, int minutes);
     void set_passengers(int passengers);
     int get_passengers() const;

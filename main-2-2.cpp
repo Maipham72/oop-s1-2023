@@ -4,6 +4,12 @@
 
 int main() {
   Airplane airplane(5680, 20);
-  airplane.reducePassengers(2);
+  std::cout << airplane.get_fuel() << std::endl;
+
+  airplane.reducePassengers(10);
+  std::cout << airplane.get_fuel() << std::endl;
+  std::cout << airplane.get_numberOfFlights() << std::endl;
+
+  return 0;
   
 }

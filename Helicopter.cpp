@@ -2,6 +2,7 @@
 #include "Helicopter.h"
 #include <string>
 #include <math.h>
+#include <iostream>
 
 Helicopter::Helicopter() {
   std::string name = NULL;
@@ -18,25 +19,26 @@ std::string Helicopter::get_name() {
 }
 
 void Helicopter::fly(int headwind, int minutes) {
-  if (headwind >= 40 && get_weight() > 5670) {
-    get_fuel() - (0.4)*minutes - 0.01*(get_weight() - 5670)*minutes;
-    get_numberOfFlights() + 1;
-  } else if (headwind >= 40 && get_weight() < 5670) {
-    get_fuel() - (0.4)*minutes;
-    get_numberOfFlights() + 1;
+    double fuelUsage = 0.002;
 
-  } else if (headwind < 40 && get_weight() > 5670) {
-    get_fuel() - (0.2)*minutes - 0.01*(get_weight() - 5670)*minutes;
-    get_numberOfFlights() + 1;
+    if (headwind >= 40) {
+      fuelUsage = 0.004;
+    }
 
-  } else if (headwind < 40 && get_weight() < 5670) {
-    get_fuel() - (0.2)*minutes;
-    get_numberOfFlights() + 1;
+    double extraFuelUsage = 0.0001 * (get_weight() - 5670);
 
-  }
-  
+    fuelUsage += extraFuelUsage;
 
-  if (get_fuel() < 20) {
-    get_numberOfFlights();
-  }
+    double fuel = get_fuel();
+
+    if (fuel >= 0.2) {
+      fuel -= fuelUsage * minutes;
+      set_fuel(fuel);
+
+      if (fuel < 0.2) {
+        set_fuel(0.0);
+      }
+
+      set_numberOfFlights(get_numberOfFlights() + 1);
+    }
 }
