@@ -9,8 +9,6 @@ class Student : public Person {
   public:
     Student();
     Student(std::string name, int ID);
-    void setID(int ID);
-    int getID() const;
 };
 
 #endif

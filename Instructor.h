@@ -10,8 +10,6 @@ class Instructor : public Person {
   public:
     Instructor();
     Instructor(std::string name, int ID);
-    void setID(int ID);
-    int getID() const;
 }; 
 
 #endif

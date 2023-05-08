@@ -7,11 +7,3 @@ Student::Student() {
 }
 
 Student::Student(std::string name, int ID): Person(name), ID(ID) {}
-
-void Student::setID(int ID) {
-  this->ID = ID;
-}
-
-int Student::getID() const {
-  return ID;
-}

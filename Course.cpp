@@ -6,7 +6,7 @@ Course::Course() {
   ID = 0;
 }
 
-Course::Course(std::string name, int ID): name(name), ID(ID) {}
+Course::Course(std::string name, int ID): name(name), ID(ID)   {}
 
 void Course::addPerson(Person* p) {
   p = new Person;

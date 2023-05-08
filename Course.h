@@ -2,6 +2,7 @@
 #define COURSE_H
 #include "Person.h"
 #include <string>
+#include <vector>
 
 class Course {
   private:
