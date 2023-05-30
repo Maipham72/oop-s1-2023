@@ -9,12 +9,14 @@ class Ship : public GameEntity {
   Ship(int x, int y) : GameEntity(x, y, 'S') {}
 
   void move(int dx, int dy) {
-    int x = std::get<0> (position);
-    int y = std::get<1> (position);
-    //std::tie(x,y) = getPos();
+    int x;
+    //std::get<0> (position);
+    int y;
+    //= std::get<1> (position);
+    std::tie(x,y) = getPos();
 
-    std::tuple<int, int> newPos (x+dx, y+dy);
-    //setPos(x+dx,y+dy);
+    //std::tuple<int, int> newPos (x+dx, y+dy);
+    setPos(x+dx,y+dy);
   }
 };
 
