@@ -13,6 +13,7 @@ class GameEntity {
       : position(std::make_tuple(x, y)), type(type) {}
 
   std::tuple<int, int> getPos() { return position; }
+  void setPos(int x, int y) { this->position = {x,y}; }
 
   char getType() { return type; }
   virtual ~GameEntity()=default;

@@ -11,9 +11,8 @@ class Ship : public GameEntity {
   void move(int dx, int dy) {
     int x;
     int y;
-    x += dx;
-    y += dy;
-    std::tuple<int, int> newPos(x, y);
+    std::tie(x,y) = getPos();
+    setPos(x+dx,y+dy);
   }
 };
 
