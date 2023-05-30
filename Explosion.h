@@ -6,8 +6,10 @@
 
 class Explosion: public GameEntity, public Effect {
   public:
-    //class GameEntity;
-    Explosion(int x, int y);
-    void apply(GameEntity& entity);
+    Explosion(int x, int y): GameEntity(x,y, 'E') {}
+
+    void apply(GameEntity& entity) {
+      entity = GameEntity(-1, 1, 'X');
+    }
 };
 #endif

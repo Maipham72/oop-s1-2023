@@ -5,5 +5,5 @@ int main() {
   Game game;
   game.initGame(2, 2, 10, 10);
   std::cout << std::endl;
-  game.gameLoop(12, 3);
+  game.gameLoop(3, 3);
 }
