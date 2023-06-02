@@ -57,7 +57,7 @@ class Game {
             character->move(1,0);
 
             for (auto *otherObject: grid) {
-              if (object->getType() == 'T') {
+              if (otherObject->getType() == 'T') {
                 Trap* trap = dynamic_cast<Trap*>(otherObject);
 
                 if(Utils::calculateDistance(character->getPos(), trap->getPos()) < trapActivationDistance) {

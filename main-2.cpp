@@ -16,6 +16,9 @@ int main() {
 
   trap.apply(character);
 
+    std::cout << "character type" << character.getType() <<  std::endl;
+
+
   std::cout << "Trap type" << trap.getType() << trap.isActive() << std::endl;
 
   return 0;

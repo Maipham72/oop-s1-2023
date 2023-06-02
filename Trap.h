@@ -14,7 +14,7 @@ class Trap: public Cell, public Effect {
     }
 
     void apply(Cell& cell) {
-      type = 'T';
+      cell.setType('T');
       active = false;
     }
 };
