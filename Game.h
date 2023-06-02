@@ -45,6 +45,9 @@ class Game {
     }
 
     void gameLoop(int maxIterations, double trapActivationDistance) {
+      int gridWidth = grid.size();
+      int gridHeight = grid.size();
+      std::make_tuple(gridWidth,gridHeight);
       int iteration = 0;
       for (int i =0; i< maxIterations; i++) {
         for (auto *object: grid) {
@@ -61,6 +64,11 @@ class Game {
                   trap->apply(*character);break;
                 }
               }
+            }
+            if (character->getPos() > std::make_tuple(gridWidth,gridHeight)) {
+              std::cout << "Character has won the game" << std::endl;
+              break;
+
             }
           }
         }

@@ -14,7 +14,7 @@ class Trap: public Cell, public Effect {
     }
 
     void apply(Cell& cell) {
-      type = 'T';
+      type = 'C';
       active = false;
     }
 };

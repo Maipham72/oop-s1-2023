@@ -8,9 +8,8 @@
 class Utils {
   public:
     static std::tuple<int, int> generateRandomPos(int gridWidth, int gridHeight) {
-
-      int x = rand() % gridWidth - 3;
-      int y = rand() % gridHeight - 6;
+      int x = rand() % gridWidth;
+      int y = rand() % gridHeight;
 
       return std::make_tuple(x,y);
     }
