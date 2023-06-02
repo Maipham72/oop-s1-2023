@@ -12,9 +12,27 @@
 class Game {
   private:
     std::vector<Cell*> grid;
+    int Width;
+    int Height;
 
   public:
     //Game();
+
+    int getGridWidth() const {
+      return Width;
+    }
+
+    void setGridWidth(int gridWidth) {
+      this->Width = gridWidth;
+    }
+
+    int getGridHeight() {
+      return Height;
+    }
+
+    void setGridHeight(int gridHeight) {
+      this->Height = gridHeight;
+    }
 
     std::vector<Cell*>& getGrid() {
       return grid;
@@ -25,6 +43,10 @@ class Game {
     }
 
     std::vector<Cell*> initGame(int numCharacters, int numTraps, int gridWidth, int gridHeight) {
+      setGridWidth(gridWidth);
+      setGridHeight(gridHeight);
+      //this->Width = gridWidth;
+      //this->Height = gridHeight;
       for (int i = 0; i < numCharacters; i++) {
         std::tuple<int, int> character  = Utils::generateRandomPos(gridWidth, gridHeight);
 
@@ -45,9 +67,9 @@ class Game {
     }
 
     void gameLoop(int maxIterations, double trapActivationDistance) {
-      int gridWidth = grid.size();
-      int gridHeight = grid.size();
-      std::make_tuple(gridWidth,gridHeight);
+        // int width = getGridWidth();
+        // int height = getGridHeight();
+      std::tuple<int, int> pos = std::make_tuple(getGridWidth(),getGridHeight());
       int iteration = 0;
       for (int i =0; i< maxIterations; i++) {
         for (auto *object: grid) {
@@ -65,9 +87,9 @@ class Game {
                 }
               }
             }
-            if (character->getPos() > std::make_tuple(gridWidth,gridHeight)) {
+            if (std::get<0>(character->getPos()) > std::get<0>(pos) || std::get<1>(character->getPos()) > std::get<1>(pos)) {
               std::cout << "Character has won the game" << std::endl;
-              break;
+              return;
 
             }
           }

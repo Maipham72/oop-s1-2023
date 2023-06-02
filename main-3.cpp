@@ -10,7 +10,8 @@
 
 int main() {
   Game game;
-
+  int gridWidth = 10;
+  int gridHeight =10;
   game.initGame(2,2,10,10);
   game.gameLoop(2,2);
   return 0;
