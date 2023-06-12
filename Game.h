@@ -12,39 +12,15 @@
 class Game {
   private:
     std::vector<Cell*> grid;
-    int Width;
-    int Height;
+    //int Width;
+    //int Height;
 
   public:
-    //Game();
-
-    int getGridWidth() const {
-      return Width;
-    }
-
-    void setGridWidth(int gridWidth) {
-      this->Width = gridWidth;
-    }
-
-    int getGridHeight() {
-      return Height;
-    }
-
-    void setGridHeight(int gridHeight) {
-      this->Height = gridHeight;
-    }
-
-    std::vector<Cell*>& getGrid() {
-      return grid;
-    }
-
-    void setGrid(std::vector<Cell*>&) {
-      this->grid = grid;
-    }
+    Game() {}
 
     std::vector<Cell*> initGame(int numCharacters, int numTraps, int gridWidth, int gridHeight) {
-      setGridWidth(gridWidth);
-      setGridHeight(gridHeight);
+      //setGridWidth(gridWidth);
+      //setGridHeight(gridHeight);
       //this->Width = gridWidth;
       //this->Height = gridHeight;
       for (int i = 0; i < numCharacters; i++) {
@@ -67,9 +43,7 @@ class Game {
     }
 
     void gameLoop(int maxIterations, double trapActivationDistance) {
-        // int width = getGridWidth();
-        // int height = getGridHeight();
-      std::tuple<int, int> pos = std::make_tuple(getGridWidth(),getGridHeight());
+      //std::tuple<int, int> pos = std::make_tuple(Width,Height);
       int iteration = 0;
       for (int i =0; i< maxIterations; i++) {
         for (auto *object: grid) {
@@ -84,11 +58,13 @@ class Game {
 
                 if(Utils::calculateDistance(character->getPos(), trap->getPos()) < trapActivationDistance) {
                   trap->apply(*character);break;
+
+                  
                 }
               }
             }
-            if (std::get<0>(character->getPos()) > std::get<0>(pos) || std::get<1>(character->getPos()) > std::get<1>(pos)) {
-              std::cout << "Character has won the game" << std::endl;
+            if (std::get<0>(character->getPos()) > Width || std::get<1>(character->getPos()) > Height) {
+              std::cout << "Character has won the game!" << std::endl;
               return;
 
             }
@@ -98,7 +74,7 @@ class Game {
         iteration++;
 
         if (iteration == maxIterations) {
-          std::cout << "Maximum number of iterations reached. Game over" << std::endl;
+          std::cout << "Maximum number of iterations reached. Game over." << std::endl;
           break;
         }
       }
